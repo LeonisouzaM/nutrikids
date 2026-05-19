@@ -161,4 +161,28 @@ document.addEventListener('DOMContentLoaded', () => {
         buildDots();
         goToSlide(0);
     });
+
+    // ========== Interactive Savings Calculator ==========
+    const slider = document.getElementById('daily-spend-slider');
+    if (slider) {
+        const dailySpendVal = document.getElementById('daily-spend-val');
+        const monthlySpendVal = document.getElementById('monthly-spend-val');
+        const monthlySavingsVal = document.getElementById('monthly-savings-val');
+        const yearlySavingsVal = document.getElementById('yearly-savings-val');
+
+        function updateSavings() {
+            const dailySpend = parseFloat(slider.value);
+            const monthlySpend = dailySpend * 30;
+            const monthlySavings = monthlySpend * 0.80; // 80% savings compared to healthy homemade
+            const yearlySavings = monthlySavings * 12;
+
+            dailySpendVal.innerText = dailySpend;
+            monthlySpendVal.innerText = Math.round(monthlySpend);
+            monthlySavingsVal.innerText = Math.round(monthlySavings);
+            yearlySavingsVal.innerText = Math.round(yearlySavings).toLocaleString('pt-BR');
+        }
+
+        slider.addEventListener('input', updateSavings);
+        updateSavings(); // Run initially
+    }
 });

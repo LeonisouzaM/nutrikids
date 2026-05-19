@@ -703,3 +703,235 @@ h1, h2, h3, h4, h5, h6 {
         max-width: 280px;
     }
 }
+
+/* =========================================================================
+   SAVINGS CALCULATOR STYLES (MONITOR DE ECONOMIA)
+   ========================================================================= */
+.savings-calculator {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #FFF9EC 0%, #FFF5DF 100%);
+    text-align: center;
+}
+.calc-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 30px;
+    padding: 40px;
+    box-shadow: 0 15px 40px rgba(255, 107, 107, 0.08);
+    border: 1px solid rgba(255, 179, 71, 0.2);
+}
+.calc-badge {
+    background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
+    color: #ffffff;
+    font-size: 0.85rem;
+    font-weight: 800;
+    padding: 6px 16px;
+    border-radius: 50px;
+    display: inline-block;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
+.calc-sub {
+    color: #718096;
+    font-size: 1.1rem;
+    margin-bottom: 35px;
+}
+.slider-box {
+    background: #F7FAFC;
+    padding: 25px;
+    border-radius: 20px;
+    margin-bottom: 35px;
+    border: 1px solid #E2E8F0;
+}
+.slider-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #2D3748;
+    margin-bottom: 15px;
+}
+.slider-value {
+    font-size: 1.75rem;
+    color: #FF6B6B;
+    font-weight: 800;
+}
+.custom-slider {
+    width: 100%;
+    height: 10px;
+    border-radius: 5px;
+    background: #E2E8F0;
+    outline: none;
+    -webkit-appearance: none;
+    margin: 15px 0;
+}
+.custom-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #FF6B6B;
+    cursor: pointer;
+    border: 4px solid #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.1s ease;
+}
+.custom-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.15);
+}
+.slider-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: #A0AEC0;
+    font-weight: 600;
+}
+.calc-results {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-bottom: 35px;
+}
+.result-card {
+    background: #F7FAFC;
+    padding: 25px;
+    border-radius: 20px;
+    border: 1px solid #E2E8F0;
+    transition: transform 0.3s ease;
+}
+.result-card h4 {
+    font-size: 1.05rem;
+    color: #4A5568;
+    margin-bottom: 10px;
+}
+.result-val {
+    font-size: 2.2rem;
+    font-weight: 900;
+    margin-bottom: 5px;
+}
+.red-text {
+    color: #E53E3E;
+}
+.green-text {
+    color: #38A169;
+}
+.result-card span {
+    font-size: 0.85rem;
+    color: #718096;
+    font-weight: 600;
+}
+.highlight-card {
+    background: linear-gradient(135deg, #E6FFFA 0%, #B2F5EA 100%);
+    border: 2px dashed #319795;
+    transform: scale(1.03);
+}
+.highlight-card h4 {
+    color: #234E52;
+}
+.highlight-card span {
+    color: #2C7A7B;
+}
+.calc-conclusion {
+    background: #FFF5F5;
+    padding: 20px;
+    border-radius: 15px;
+    border-left: 5px solid #FF6B6B;
+    text-align: left;
+}
+.calc-conclusion p {
+    font-size: 1rem;
+    color: #2D3748;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* =========================================================================
+   ALTERNATIVE COMPARISON TABLE STYLES (TABELA COMPARATIVA)
+   ========================================================================= */
+.comparison {
+    padding: 80px 20px;
+    background: #ffffff;
+}
+.comp-subtitle {
+    font-size: 1.2rem;
+    color: #718096;
+    margin: -10px auto 45px;
+    max-width: 600px;
+}
+.table-responsive {
+    max-width: 950px;
+    margin: 0 auto;
+    overflow-x: auto;
+    border-radius: 24px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    border: 1px solid #E2E8F0;
+}
+.comp-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    background: #ffffff;
+    font-size: 1.05rem;
+}
+.comp-table th, .comp-table td {
+    padding: 22px 25px;
+    border-bottom: 1px solid #E2E8F0;
+}
+.comp-table th {
+    background: #F7FAFC;
+    color: #2D3748;
+    font-weight: 800;
+    font-size: 1.1rem;
+}
+.comp-table tbody tr:last-child td {
+    border-bottom: none;
+}
+.comp-table tbody tr:hover {
+    background: #FAFAFA;
+}
+.nutrikids-col {
+    background: rgba(255, 107, 107, 0.03);
+    border-left: 2px solid rgba(255, 107, 107, 0.15);
+    border-right: 2px solid rgba(255, 107, 107, 0.15);
+}
+thead th.nutrikids-col {
+    background: linear-gradient(180deg, #FFF5F5 0%, rgba(255, 107, 107, 0.05) 100%);
+    color: #FF6B6B;
+    font-weight: 900;
+}
+.criteria-name {
+    font-weight: 700;
+    color: #4A5568;
+}
+.text-green {
+    color: #38A169 !important;
+}
+.text-red {
+    color: #E53E3E !important;
+}
+.font-bold {
+    font-weight: 800 !important;
+}
+
+@media (max-width: 768px) {
+    .calc-results {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    .highlight-card {
+        transform: scale(1);
+    }
+    .calc-container {
+        padding: 25px 20px;
+    }
+    .result-val {
+        font-size: 1.95rem;
+    }
+    .comp-table th, .comp-table td {
+        padding: 15px 18px;
+        font-size: 0.95rem;
+    }
+}
