@@ -185,4 +185,38 @@ document.addEventListener('DOMContentLoaded', () => {
         slider.addEventListener('input', updateSavings);
         updateSavings(); // Run initially
     }
+
+    // ========== VSL Delayed Content Release ==========
+    // Query parameter to reset watch status for testing (e.g. ?reset=true or ?vsl_reset=true)
+    if (window.location.search.includes('reset=true') || window.location.search.includes('vsl_reset=true')) {
+        localStorage.removeItem('vsl_watched');
+    }
+
+    const revealContent = () => {
+        const delayedContent = document.getElementById('delayed-content');
+        const heroCta = document.getElementById('hero-cta');
+        const heroTrust = document.getElementById('hero-trust');
+
+        if (delayedContent) delayedContent.style.display = 'block';
+        if (heroCta) heroCta.style.display = 'inline-flex';
+        if (heroTrust) heroTrust.style.display = 'flex';
+        
+        // Trigger resize events so that carousels calculate correct widths once shown
+        window.dispatchEvent(new Event('resize'));
+    };
+
+    if (localStorage.getItem('vsl_watched') === 'true') {
+        revealContent();
+    } else {
+        window._wq = window._wq || [];
+        _wq.push({
+            id: 'f8nwpihx1c',
+            onReady: function(video) {
+                video.bind('end', function() {
+                    localStorage.setItem('vsl_watched', 'true');
+                    revealContent();
+                });
+            }
+        });
+    }
 });

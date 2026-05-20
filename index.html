@@ -58,11 +58,11 @@
                     <style>wistia-player[media-id='f8nwpihx1c']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/f8nwpihx1c/swatch'); display: block; filter: blur(5px); padding-top:177.78%; }</style>
                     <wistia-player media-id="f8nwpihx1c" aspect="0.5625"></wistia-player>
                 </div>
-                <a href="#comprar" class="cta-btn primary-cta">
+                <a href="#comprar" id="hero-cta" class="cta-btn primary-cta" style="display: none;">
                     QUERO SALVAR A SAÚDE DO MEU FILHO AGORA! 🚀
                 </a>
                 
-                <div class="hero-trust">
+                <div id="hero-trust" class="hero-trust" style="display: none;">
                     <div class="trust-item"><span class="icon">🔒</span> Compra 100% Segura</div>
                     <div class="trust-item"><span class="icon">⚡</span> Acesso Imediato no Celular</div>
                     <div class="trust-item"><span class="icon">🛡️</span> Garantia Incondicional de 7 Dias</div>
@@ -70,6 +70,8 @@
             </div>
         </div>
     </section>
+
+    <div id="delayed-content" style="display: none;">
 
     <!-- ==================== IDENTIFICAÇÃO ==================== -->
     <section class="identification">
@@ -649,6 +651,7 @@
             <p class="footer-copy">&copy; 2026 NutriKids. Todos os direitos reservados.</p>
         </div>
     </footer>
+    </div>
 
     <script src="script.js"></script>
 </body>
