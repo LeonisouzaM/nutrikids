@@ -820,10 +820,28 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 10px;
 }
 .result-val {
-    font-size: 2rem;
+    font-size: 2.4rem;
     font-weight: 900;
     margin-bottom: 5px;
     line-height: 1.1;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 5px;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+}
+.result-currency {
+    font-size: 1.1rem;
+    font-weight: 800;
+    opacity: 0.85;
+    flex-shrink: 0;
+}
+.result-number {
+    font-size: 2.4rem;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -1px;
 }
 .red-text {
     color: #E53E3E;
@@ -831,12 +849,13 @@ h1, h2, h3, h4, h5, h6 {
 .green-text {
     color: #38A169;
 }
-.result-card span {
+.result-card > span {
     font-size: 0.82rem;
     color: #718096;
     font-weight: 600;
     display: block;
     line-height: 1.3;
+    margin-top: 4px;
 }
 .highlight-card {
     background: linear-gradient(135deg, #E6FFFA 0%, #B2F5EA 100%);
@@ -1093,7 +1112,15 @@ thead th.nutrikids-col {
         padding: 20px 18px;
     }
     .result-val {
-        font-size: 2.2rem;
+        font-size: 2.6rem;
+        gap: 4px;
+        justify-content: flex-start;
+    }
+    .result-currency {
+        font-size: 1.3rem;
+    }
+    .result-number {
+        font-size: 2.6rem;
     }
     .highlight-card {
         transform: scale(1);
