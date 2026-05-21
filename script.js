@@ -1,5 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // ========== Forward URL Parameters to Pepperpay Links ==========
+    const params = window.location.search;
+    if (params) {
+        document.querySelectorAll('a[href*="go.pepperpay.com.br"]').forEach(link => {
+            if (link.href.includes('?')) {
+                link.href += '&' + params.replace('?', '');
+            } else {
+                link.href += params;
+            }
+        });
+    }
+
     // ========== Smooth scrolling ==========
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
