@@ -1,16 +1,36 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ========== Forward URL Parameters to Pepperpay Links ==========
-    const params = window.location.search;
-    if (params) {
-        document.querySelectorAll('a[href*="go.pepperpay.com.br"]').forEach(link => {
-            if (link.href.includes('?')) {
-                link.href += '&' + params.replace('?', '');
-            } else {
-                link.href += params;
+    // ========== Forward URL Parameters to Pepperpay Links (Interval) ==========
+    function updatePepperLinks() {
+        const params = window.location.search;
+        if (!params) return;
+
+        document.querySelectorAll('a').forEach(link => {
+            if (link.href.includes('go.pepperpay.com.br')) {
+                try {
+                    const url = new URL(link.href);
+                    let changed = false;
+
+                    params.replace('?', '').split('&').forEach(param => {
+                        const [key, value] = param.split('=');
+                        if (url.searchParams.get(key) !== value) {
+                            url.searchParams.set(key, value);
+                            changed = true;
+                        }
+                    });
+
+                    if (changed) {
+                        link.href = url.toString();
+                        console.log('LINK ATUALIZADO:', link.href);
+                    }
+                } catch (e) {
+                    console.error('Erro ao atualizar link:', e);
+                }
             }
         });
     }
+    updatePepperLinks(); // Executa imediatamente ao carregar
+    setInterval(updatePepperLinks, 1000);
 
     // ========== Smooth scrolling ==========
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
