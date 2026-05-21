@@ -1,14 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ========== Forward URL Parameters to Pepperpay Links (Load) ==========
+    // ========== Forward URL Parameters to Checkout Links (Load) ==========
     window.addEventListener("load", function () {
         const params = window.location.search;
         if (!params) return;
 
-        document.querySelectorAll('a[href*="go.pepperpay.com.br"]').forEach(link => {
+        document.querySelectorAll('a[href*="pay.kirvano.com"]').forEach(link => {
             const separator = link.href.includes('?') ? '&' : '?';
             link.href = link.href + separator + params.substring(1);
-            console.log("LINK PEPPER ATUALIZADO:", link.href);
+            console.log("LINK KIRVANO ATUALIZADO:", link.href);
         });
     });
 
